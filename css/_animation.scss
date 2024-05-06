@@ -1,0 +1,200 @@
+@keyframes rotateSun {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveCloud {
+  0% {
+    left: 10%;
+    top: 5%;
+  }
+  100% {
+    left: 100%;
+    top: 30%;
+  }
+}
+@keyframes moveCloudOne {
+  0% {
+    left: 90%;
+    top: 5%;
+  }
+  100% {
+    left: -10%;
+    top: 30%;
+  }
+}
+
+@keyframes changeOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes dolphinAnimation {
+  0% {
+    transform: translateX(-20%) skewY(-15deg);
+  }
+  25% {
+    transform: translateX(50%) skewY(15deg);
+  }
+  50% {
+    transform: translateX(100%) scaleX(-1) skewY(-15deg);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(100%) scaleX(-1) skewY(15deg);
+  }
+  100% {
+    transform: translateX(-20%) skewY(-15deg);
+  }
+}
+.conteiner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0099ff;
+  h1 {
+    padding-top: 5%;
+    font-size: 22px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+  .sun {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 200px;
+    height: 200px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.5s;
+
+    .eye {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+
+      &__left {
+        top: 30%;
+        left: 30%;
+      }
+
+      &__right {
+        top: 30%;
+        right: 30%;
+      }
+
+      .pupil {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border-radius: 50%;
+
+        &__left {
+          top: 40%;
+          left: 35%;
+        }
+
+        &__right {
+          top: 40%;
+          left: 35%;
+        }
+      }
+    }
+
+    .mouth {
+      position: absolute;
+      width: 120px;
+      height: 60px;
+      border-bottom: 8px solid black;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      animation: rotateSun 2s linear infinite;
+    }
+  }
+
+  .cloud {
+    position: absolute;
+    width: 240px;
+    height: 120px;
+
+    animation: moveCloud 20s linear infinite alternate,
+      changeOpacity 3s infinite alternate;
+    &:hover {
+      transform: scale(1.5);
+      transition: all 1s;
+    }
+  }
+
+  .cloud__one {
+    position: absolute;
+    width: 310px;
+    height: 115px;
+
+    animation: moveCloudOne 20s linear infinite alternate,
+      changeOpacity 5s infinite alternate;
+    &:hover {
+      transform: scale(1.5);
+      transition: all 1s;
+    }
+  }
+
+  .beach {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+
+    .sand {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fad27b;
+
+      .palm {
+        position: absolute;
+        bottom: 5%;
+        left: 10%;
+        width: 25%;
+        height: auto;
+        z-index: 2;
+      }
+    }
+
+    .water {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      background-color: #166ba8;
+
+      .dolphin {
+        position: absolute;
+        bottom: 20;
+        left: 10%;
+        width: 250px;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+        z-index: 1;
+        animation: dolphinAnimation 10s linear infinite alternate;
+      }
+    }
+  }
+}

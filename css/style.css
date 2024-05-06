@@ -1,0 +1,336 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  font-family: Arial, sans-serif;
+  margin: 3%;
+  padding: 3%;
+  background-color: rgb(53, 53, 53);
+  color: antiquewhite;
+  text-align: center;
+}
+.wrapper h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+.wrapper h2 {
+  font-size: 1.2rem;
+  margin-top: 5%;
+}
+.wrapper audio,
+.wrapper video {
+  width: 50%;
+  margin-top: 5%;
+}
+.wrapper iframe {
+  width: 100%;
+  height: 30vw;
+  margin-top: 2%;
+}
+
+@keyframes rotateSun {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveCloud {
+  0% {
+    left: 10%;
+    top: 5%;
+  }
+  100% {
+    left: 100%;
+    top: 30%;
+  }
+}
+@keyframes moveCloudOne {
+  0% {
+    left: 90%;
+    top: 5%;
+  }
+  100% {
+    left: -10%;
+    top: 30%;
+  }
+}
+@keyframes changeOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes dolphinAnimation {
+  0% {
+    transform: translateX(-20%) skewY(-15deg);
+  }
+  25% {
+    transform: translateX(50%) skewY(15deg);
+  }
+  50% {
+    transform: translateX(100%) scaleX(-1) skewY(-15deg);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(100%) scaleX(-1) skewY(15deg);
+  }
+  100% {
+    transform: translateX(-20%) skewY(-15deg);
+  }
+}
+.conteiner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0099ff;
+}
+.conteiner h1 {
+  padding-top: 5%;
+  font-size: 22px;
+  text-align: center;
+}
+.conteiner h1 a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+.conteiner .sun {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+.conteiner .sun .eye {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+.conteiner .sun .eye__left {
+  top: 30%;
+  left: 30%;
+}
+.conteiner .sun .eye__right {
+  top: 30%;
+  right: 30%;
+}
+.conteiner .sun .eye .pupil {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+}
+.conteiner .sun .eye .pupil__left {
+  top: 40%;
+  left: 35%;
+}
+.conteiner .sun .eye .pupil__right {
+  top: 40%;
+  left: 35%;
+}
+.conteiner .sun .mouth {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  border-bottom: 8px solid black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.conteiner .sun:hover {
+  animation: rotateSun 2s linear infinite;
+}
+.conteiner .cloud {
+  position: absolute;
+  width: 240px;
+  height: 120px;
+  animation: moveCloud 20s linear infinite alternate, changeOpacity 3s infinite alternate;
+}
+.conteiner .cloud:hover {
+  transform: scale(1.5);
+  transition: all 1s;
+}
+.conteiner .cloud__one {
+  position: absolute;
+  width: 310px;
+  height: 115px;
+  animation: moveCloudOne 20s linear infinite alternate, changeOpacity 5s infinite alternate;
+}
+.conteiner .cloud__one:hover {
+  transform: scale(1.5);
+  transition: all 1s;
+}
+.conteiner .beach {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+}
+.conteiner .beach .sand {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fad27b;
+}
+.conteiner .beach .sand .palm {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  width: 25%;
+  height: auto;
+  z-index: 2;
+}
+.conteiner .beach .water {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  background-color: #166ba8;
+}
+.conteiner .beach .water .dolphin {
+  position: absolute;
+  bottom: 20;
+  left: 10%;
+  width: 250px;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+  z-index: 1;
+  animation: dolphinAnimation 10s linear infinite alternate;
+}/*# sourceMappingURL=style.css.map */
